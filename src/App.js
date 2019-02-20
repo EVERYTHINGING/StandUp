@@ -15,9 +15,9 @@ export default class App extends React.Component {
               <Text>Home</Text>
             </Link>
             <Switch>
-              <Route exact path="/" render={ props => <Home {...props} /> } />
-              <Route path="/cases" render={ props => <Cases {...props} /> } />
-              <Route path="/new" render={ props => <New {...props} /> } />
+              <Route exact path="/" component={Home} /> } />
+              <Route path="/cases" component={Cases} /> } />
+              <Route path="/new" component={New} /> } />
             </Switch>
           </View>
         </Router>
