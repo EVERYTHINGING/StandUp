@@ -10,7 +10,7 @@ export default class New extends React.Component {
       what: '',
       when: '',
       where: '',
-      currentCard: 0
+      currentCard: 0,
     };
 
     this.scrollView = null;
@@ -36,93 +36,111 @@ export default class New extends React.Component {
     const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
 
     return (
-         <ScrollView horizontal={true} pagingEnabled={true} scrollEnabled={false} ref="_scrollView">
-            <View style={[styles.card, {width: viewportWidth}]}>
-              <Text>Who?</Text>
-              <TextInput
-                style={styles.textInput}
-                onChangeText={(text) => this.setState({who: text})}
-                value={this.state.who}
-              />
-              <Button
-                onPress={this.handleNextPress}
-                title="Next"
-                color="#5844ed"
-                accessibilityLabel="Go to next step"
-              />
-            </View>
-            <View style={[styles.card, {width: viewportWidth}]}>
-              <Text>What?</Text>
-              <TextInput
-                style={styles.textInput}
-                onChangeText={(text) => this.setState({what: text})}
-                value={this.state.what}
-              />
-              <Button
-                onPress={this.handleNextPress}
-                title="Next"
-                color="#5844ed"
-                accessibilityLabel="Go to next step"
-              />
-              <Button
-                onPress={this.handleBackPress}
-                title="Back"
-                color="#5844ed"
-                accessibilityLabel="Go to previous step"
-              />
-            </View>
-            <View style={[styles.card, {width: viewportWidth}]}>
-              <Text>When?</Text>
-              <TextInput
-                style={styles.textInput}
-                onChangeText={(text) => this.setState({when: text})}
-                value={this.state.when}
-              />
-              <Button
-                onPress={this.handleNextPress}
-                title="Next"
-                color="#5844ed"
-                accessibilityLabel="Go to next step"
-              />
-              <Button
-                onPress={this.handleBackPress}
-                title="Back"
-                color="#5844ed"
-                accessibilityLabel="Go to previous step"
-              />
-            </View>
-            <View style={[styles.card, {width: viewportWidth}]}>
-              <Text>Where?</Text>
-              <TextInput
-                style={styles.textInput}
-                onChangeText={(text) => this.setState({where: text})}
-                value={this.state.where}
-              />
-              <Button
-                onPress={this.handleBackPress}
-                title="Back"
-                color="#5844ed"
-                accessibilityLabel="Go to previous step"
-              />
-            </View>
-          </ScrollView>
+        <View>
+          <View style={styles.topBar}>
+            <Text style={styles.topBarText}>New Case</Text>
+          </View>
+          <View style={styles.backButtonContainer}>
+          { this.state.currentCard != 0 && 
+            <Button
+              onPress={this.handleBackPress}
+              title="Back"
+              color="#5844ed"
+              accessibilityLabel="Go to previous step"
+            />
+          }
+          </View>
+           <ScrollView horizontal={true} pagingEnabled={true} scrollEnabled={false} ref="_scrollView">
+              <View style={[styles.card, {width: viewportWidth}]}>
+                <Text style={styles.cardTitle}>Who?</Text>
+                <TextInput
+                  style={styles.textInput}
+                  onChangeText={(text) => this.setState({who: text})}
+                  value={this.state.who}
+                />
+                <Button
+                  onPress={this.handleNextPress}
+                  title="Next"
+                  color="#5844ed"
+                  accessibilityLabel="Go to next step"
+                />
+              </View>
+              <View style={[styles.card, {width: viewportWidth}]}>
+                <Text style={styles.cardTitle}>What?</Text>
+                <TextInput
+                  style={styles.textInput}
+                  onChangeText={(text) => this.setState({what: text})}
+                  value={this.state.what}
+                />
+                <Button
+                  onPress={this.handleNextPress}
+                  title="Next"
+                  color="#5844ed"
+                  accessibilityLabel="Go to next step"
+                />
+              </View>
+              <View style={[styles.card, {width: viewportWidth}]}>
+                <Text style={styles.cardTitle}>When?</Text>
+                <TextInput
+                  style={styles.textInput}
+                  onChangeText={(text) => this.setState({when: text})}
+                  value={this.state.when}
+                />
+                <Button
+                  onPress={this.handleNextPress}
+                  title="Next"
+                  color="#5844ed"
+                  accessibilityLabel="Go to next step"
+                />
+              </View>
+              <View style={[styles.card, {width: viewportWidth}]}>
+                <Text style={styles.cardTitle}>Where?</Text>
+                <TextInput
+                  style={styles.textInput}
+                  onChangeText={(text) => this.setState({where: text})}
+                  value={this.state.where}
+                />
+                <Button
+                  onPress={this.handleSubmitPress}
+                  title="Submit"
+                  color="#5844ed"
+                  accessibilityLabel="Submit"
+                />
+              </View>
+            </ScrollView>
+          </View>
       );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
+  topBar: {
+    height: 50,
+    alignItems: 'center'
+  },
+  topBarText: {
+    fontSize: 20
   },
   card: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  textInput: {
-    borderWidth: 5,
-    borderColor: '#000',
-    width: '50%'
+  cardTitle: {
+    fontSize: 30
   },
+  textInput: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    width: '33%',
+    height: 100,
+    borderRadius: 10,
+    marginTop: 40,
+    marginBottom: 40
+  },
+  backButtonContainer: {
+    height: 50,
+    alignItems: 'flex-start',
+  }
 });
 

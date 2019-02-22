@@ -5,7 +5,10 @@ import { Link } from '../routing';
 export default class Home extends React.Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
+        <View style={styles.topBar}>
+          <Text style={styles.topBarText}>Home</Text>
+        </View>
       	<Link to="/cases">
       		<Text>See All Cases</Text>
       	</Link>
@@ -16,3 +19,17 @@ export default class Home extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  topBar: {
+    height: 50,
+    alignItems: 'center'
+  },
+  topBarText: {
+    fontSize: 20
+  },
+});
