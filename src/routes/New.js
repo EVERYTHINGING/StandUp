@@ -43,7 +43,7 @@ export default class New extends React.Component {
           { this.state.currentCard != 0 && 
             <Button
               onPress={this.handleBackPress}
-              title="Back"
+              title="&#60;"
               color="#5844ed"
               accessibilityLabel="Go to previous step"
             />
@@ -56,12 +56,14 @@ export default class New extends React.Component {
                   style={styles.textInput}
                   onChangeText={(text) => this.setState({who: text})}
                   value={this.state.who}
+                  returnKeyType="done"
                 />
                 <Button
                   onPress={this.handleNextPress}
                   title="Next"
                   color="#5844ed"
                   accessibilityLabel="Go to next step"
+                  disabled={this.state.who === ''}
                 />
               </View>
               <View style={[styles.card, {width: viewportWidth}]}>
@@ -70,12 +72,14 @@ export default class New extends React.Component {
                   style={styles.textInput}
                   onChangeText={(text) => this.setState({what: text})}
                   value={this.state.what}
+                  returnKeyType="done"
                 />
                 <Button
                   onPress={this.handleNextPress}
                   title="Next"
                   color="#5844ed"
                   accessibilityLabel="Go to next step"
+                  disabled={this.state.what === ''}
                 />
               </View>
               <View style={[styles.card, {width: viewportWidth}]}>
@@ -84,12 +88,14 @@ export default class New extends React.Component {
                   style={styles.textInput}
                   onChangeText={(text) => this.setState({when: text})}
                   value={this.state.when}
+                  returnKeyType="done"
                 />
                 <Button
                   onPress={this.handleNextPress}
                   title="Next"
                   color="#5844ed"
                   accessibilityLabel="Go to next step"
+                  disabled={this.state.when === ''}
                 />
               </View>
               <View style={[styles.card, {width: viewportWidth}]}>
@@ -98,12 +104,14 @@ export default class New extends React.Component {
                   style={styles.textInput}
                   onChangeText={(text) => this.setState({where: text})}
                   value={this.state.where}
+                  returnKeyType="done"
                 />
                 <Button
                   onPress={this.handleSubmitPress}
                   title="Submit"
                   color="#5844ed"
                   accessibilityLabel="Submit"
+                  disabled={this.state.where === ''}
                 />
               </View>
             </ScrollView>

@@ -17,7 +17,7 @@ export default class Menu extends React.Component {
 const styles = StyleSheet.create({
   menuButton: {
     position: 'absolute',
-    top: 0,
+    top: 30,
     left: 0,
     width: 40,
     height: 40,

@@ -12,7 +12,10 @@ const TopBar = ({name}) => {
 const styles = StyleSheet.create({
   topBar: {
     height: 50,
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
   },
   topBarText: {
     fontSize: 20
