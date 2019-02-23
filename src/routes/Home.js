@@ -6,14 +6,16 @@ import TopBar from '../components/TopBar';
 export default class Home extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View>
         <TopBar name="Home" />
-      	<Link to="/cases">
-      		<Text>See All Cases</Text>
-      	</Link>
-      	<Link to="/new">
-      		<Text>New Case</Text>
-      	</Link>
+        <View style={styles.container}>
+        	<Link to="/cases">
+        		<Text>See All Cases</Text>
+        	</Link>
+        	<Link to="/new">
+        		<Text>New Case</Text>
+        	</Link>
+        </View>
       </View>
     );
   }
