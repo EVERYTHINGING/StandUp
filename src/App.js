@@ -4,23 +4,21 @@ import { Router, Switch, Route, Link } from './routing';
 import Home from './routes/Home';
 import Cases from './routes/Cases';
 import New from './routes/New';
-import Navigation from './components/Navigation';
+import Menu from './components/Menu';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Router>
-          <View>
-            <Navigation />
-            <Switch>
-              <Route exact path="/" component={Home} /> } />
-              <Route path="/cases" component={Cases} /> } />
-              <Route path="/new" component={New} /> } />
-            </Switch>
-          </View>
-        </Router>
-      </View>
+      <Router>
+        <View style={styles.container}>
+          <Menu />
+          <Switch>
+            <Route exact path="/" component={Home} /> } />
+            <Route path="/cases" component={Cases} /> } />
+            <Route path="/new" component={New} /> } />
+          </Switch>
+        </View>
+      </Router>
     );
   }
 }

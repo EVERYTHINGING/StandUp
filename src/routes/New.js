@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, TextInput, Text, Dimensions, ScrollView, Button } from 'react-native';
+import TopBar from '../components/TopBar';
 
 export default class New extends React.Component {
   constructor(){
@@ -37,9 +38,7 @@ export default class New extends React.Component {
 
     return (
         <View>
-          <View style={styles.topBar}>
-            <Text style={styles.topBarText}>New Case</Text>
-          </View>
+          <TopBar name="New Case" />
           <View style={styles.backButtonContainer}>
           { this.state.currentCard != 0 && 
             <Button
@@ -114,13 +113,6 @@ export default class New extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  topBar: {
-    height: 50,
-    alignItems: 'center'
-  },
-  topBarText: {
-    fontSize: 20
-  },
   card: {
     flex: 1,
     alignItems: 'center',
