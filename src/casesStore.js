@@ -1,17 +1,23 @@
 export default [
 	{
-		number: '1',
-		name: 'Case 1',
-		explaination: 'loredwadawdawdawdawdawdawd',
+		id: '0',
+		who: ['chad'],
+		what: 'chad beat me up in the gym',
+		when: '02/03/18, 2:32pm',
+		where: 'gym'
 	},
 	{
-		number: '2',
-		name: 'Case 2',
-		explaination: 'loredwadawdawdawdawdawdawd',
+		id: '1',
+		who: ['billy', 'tommy'],
+		what: 'billy and tommy told me I was lame',
+		when: '01/03/19, 11:23am',
+		where: 'cafeteria'
 	},
 	{
-		number: '3',
-		name: 'Case 3',
-		explaination: 'loredwadawdawdawdawdawdawd',
+		id: '2',
+		who: ['bobby'],
+		what: 'bobby pushed me into the locker',
+		when: '10/12/18, 10:05am',
+		where: 'hall'
 	}
 ]

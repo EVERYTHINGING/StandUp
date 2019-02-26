@@ -40,7 +40,7 @@ export default class New extends React.Component {
         <View>
           <TopBar name="New Case" />
           <View style={styles.backButtonContainer}>
-          { this.state.currentCard != 0 && 
+          { this.state.currentCard !== 0 && 
             <Button
               onPress={this.handleBackPress}
               title="&#60;"
@@ -57,6 +57,7 @@ export default class New extends React.Component {
                   onChangeText={(text) => this.setState({who: text})}
                   value={this.state.who}
                   returnKeyType="done"
+                  multiline
                 />
                 <Button
                   onPress={this.handleNextPress}
@@ -73,6 +74,7 @@ export default class New extends React.Component {
                   onChangeText={(text) => this.setState({what: text})}
                   value={this.state.what}
                   returnKeyType="done"
+                  multiline
                 />
                 <Button
                   onPress={this.handleNextPress}
@@ -89,6 +91,7 @@ export default class New extends React.Component {
                   onChangeText={(text) => this.setState({when: text})}
                   value={this.state.when}
                   returnKeyType="done"
+                  multiline
                 />
                 <Button
                   onPress={this.handleNextPress}
@@ -105,6 +108,7 @@ export default class New extends React.Component {
                   onChangeText={(text) => this.setState({where: text})}
                   value={this.state.where}
                   returnKeyType="done"
+                  multiline
                 />
                 <Button
                   onPress={this.handleSubmitPress}
@@ -136,7 +140,10 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 10,
     marginTop: 40,
-    marginBottom: 40
+    marginBottom: 40,
+    textAlign: 'center',
+    fontSize: 25,
+    padding: 10
   },
   backButtonContainer: {
     height: 50,
